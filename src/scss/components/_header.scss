@@ -1,86 +1,93 @@
-.topheader {
-    background: var(--page-background);
-    background: linear-gradient(var(--white), var(--page-background));
+.siteheader {
     .container {
+        padding-top: 20px;
+    }
+    &_top {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
         align-items: center;
-        @media (max-width: 1280px) {
-            padding: 10px var(--container-padding);
-        }
-    }
-    &_mobile {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        @media (max-width: 1024px) {
+        justify-content: space-between;
+        margin-bottom: 20px;
+        &_logo {
             display: flex;
-        }
-        span {
-            width: 40px;
-            height: 5px;
-            background: var(--darkblue);
-        }
-        span:nth-child(1) {
-            background: linear-gradient(var(--darkblue), var(--darkpink));
-        }
-        span:nth-child(2) {
-            background: var(--darkpink);
-        }
-        span:nth-child(3) {
-            background: linear-gradient(var(--darkpink), var(--darkblue));
-        }
-    }
-    &_logo {
-        @extend .logo_topheader;
-        margin: 10px 0;
-        @media (max-width: 1280px) {
-            max-width: 120px;
-            img {
-                width: 100%;
+            gap: 30px;
+            align-items: center;
+            height: fit-content;
+            &_left {
+                max-width: 140px;
+                h1,
+                p {
+                    @include text_gradient(var(--main_gradient));
+                }
+                h1 {
+                    @include font($fz: 21px, $fw: 700);
+                    margin-bottom: 8px;
+                }
+                p {
+                    @include font(12.5px, $fw: 500);
+                }
+            }
+            &_descr {
+                max-width: 150px;
+                @include font($fz: 14px);
             }
         }
-        @media (max-width: 1024px) {
-            display: none;
+        &_address {
+            max-width: 210px;
+            @include font($fz: 14px, $fw: 500);
+        }
+        &_phone {
+            a {
+                @include text_gradient(var(--main_gradient));
+                @include font($fz: 24px, $fw: 700);
+                margin-bottom: 12px;
+            }
+            p {
+                @include font($fz: 14px, $fw: 500);
+                span {
+                    @include font($fw: 600);
+                }
+            }
+        }
+        &_social {
+            max-width: 140px;
+            &_img {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 5px;
+            }
+            p {
+                text-align: center;
+            }
+            a {
+                display: block;
+                text-align: center;
+                @include font($fw: 600);
+            }
+        }
+        &_btn {
+            @include btn($padding: 20px 15px);
+            @include font($fz: 17px, $fw: 600);
         }
     }
-    .headernav {
-        display: block;
-        align-self: center;
-        @media (max-width: 1024px) {
-            display: none;
-        }
-        &_ul {
+    &_bottom {
+        ul {
             display: flex;
-            height: 100%;
+            gap: 56px;
             li {
-                a {
-                    display: flex;
-                    margin: auto;
-                    padding: 15px 30px;
-                    color: var(--darkblue);
-                    @include font(var(--normal-fz));
-                    span {
-                        margin: auto;
-                    }
-                    @media (max-width: 1280px) {
-                        padding: 14px 20px;
-                    }
+               &:first-child {
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -8px;
+                    left: 0;
+                    width: 45px;
+                    height: 3px;
+                    background: var(--main_gradient);
+                    border-radius: var(--big_radius);
                 }
-            }
-            li.active,
-            li:hover {
-                background: var(--darkblue);
-                border-radius: var(--border-radius);
-                a {
-                    color: var(--white);
-                }
+               }
             }
         }
-    }
-    &_appointment {
-        @extend .appointment_to_doctor;
     }
 }

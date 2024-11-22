@@ -1,23 +1,49 @@
-@mixin btn($padding: 10px 30px,
-$fz: 16px,
-$fw: 400,
-$color: var(--white),
-$background: var(--darkblue),
-$border_radius: var(--border-radius)) {
+@mixin btn(
+    $padding: 10px 30px,
+    $color: var(--black),
+    $background: var(--main_gradient),
+    $border_radius: var(--small_radius)
+) {
     border: none;
     background: $background;
     color: $color;
     padding: $padding;
-    font-size: $fz;
-    font-weight: $fw;
     border-radius: $border_radius;
 }
 
-@mixin font($fz, $fw: 400, $ff: var(--main_font-family), $fs: normal, $lh: normal, $pos: left) {
+@mixin font($fz: null, $fw: null, $ff: null, $fs: null, $lh: null, $pos: null) {
+    @if $ff {
+        font-family: $ff;
+    }
+    @if $fz {
+        font-size: $fz;
+    }
+    @if $fw {
+        font-weight: $fw;
+    }
+    @if $fs {
+        font-style: $fs;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $pos {
+        text-align: $pos;
+    }
+}
+
+@mixin font_all($fz, $fw: 400, $ff: var(--main_font-family), $fs: normal, $lh: normal, $pos: left) {
     font-family: $ff;
     font-size: $fz;
     font-weight: $fw;
     font-style: $fs;
     line-height: $lh;
     text-align: $pos;
+}
+
+@mixin text_gradient($color) {
+    background: $color;
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

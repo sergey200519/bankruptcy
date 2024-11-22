@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
+	@@include('html/components/_head.html', {
+		"title": "Главная",
+		"more": "<link rel=\"stylesheet\" href=\"css/pages/index/index.min.css\" />",
+		"page": "index"
+	})
 
-
-<body>
-	<div class="wrapper">
-		
-
-			
-
-
-	</div>
-	<script defer type="module" src="js/script.min.js"></script>
-</body>
+	<body>
+		<div class="wrapper">
+			@@include('html/components/_header.html',{
+				"page": "index"
+			})
+		</div>
+		<script defer type="module" src="js/script.min.js"></script>
+	</body>
 
 </html>

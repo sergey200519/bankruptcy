@@ -1,5 +1,52 @@
 <header class="siteheader">
     <div class="container">
+        <div class="siteheader_top">
+            <div class="siteheader_top_logo">
+                <div class="siteheader_top_logo_left">
+                    <h1>ПРАВОВОЙ СОТВЕТНИК</h1>
+                    <p>Юридическое бюро</p>
+                </div>
+                <p class="siteheader_top_logo_descr">
+                    Экспертная помощь
+                    в списании долгов физических лиц и ИП по всей России
+                </p>
+            </div>
 
+            <p class="siteheader_top_address">
+                Удмуртская Республика,
+                г. Ижевск, ул. Холмогорова, 11 Б, западный вход, 4 этаж
+            </p>
+            <div class="siteheader_top_phone">
+                <a href="tel:+78007006479">8 800 700 64 79</a>
+                <p><span>Пн-Пт:</span> с 9:00 до 18:00</p>
+            </div>
+            <div class="siteheader_top_social">
+                <div class="siteheader_top_social_img">
+                    @@if (page === "index") {
+                    <img src="img/social_1.svg" alt="">
+                    <img src="img/social_2.svg" alt="">
+                    <img src="img/social_3.svg" alt="">
+                    }
+                    @@if (page !== "index") {
+                    <img src="@@pagesPath/img/social_1.svg" alt="">
+                    <img src="@@pagesPath/img/social_2.svg" alt="">
+                    <img src="@@pagesPath/img/social_3.svg" alt="">
+                    }
+                </div>
+                <p>Задайте вопрос в мессенджере</p>
+                <a href="tel:+79630285610">8 963 028 56 10</a>
+            </div>
+            <div class="siteheader_top_btn">
+                <a href="#" class="btn">Получить консультацию</a>
+            </div>
+        </div>
+        <nav class="siteheader_bottom">
+            <ul>
+                <li><a href="#">Банкротство физических лиц</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Кейсы</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
