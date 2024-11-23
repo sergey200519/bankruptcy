@@ -4,6 +4,8 @@
     $background: var(--main_gradient),
     $border_radius: var(--small_radius)
 ) {
+    display: block;
+    width: fit-content;
     border: none;
     background: $background;
     color: $color;

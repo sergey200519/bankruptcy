@@ -1,0 +1,72 @@
+.welcome {
+    h2 {
+        @include font($fz: 48px, $fw: 700);
+        max-width: 890px;
+        margin-bottom: 72px;
+        span {
+            // @include font($fz: 48px, $fw: 700);
+            @include text_gradient(var(--main_gradient));
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+        }
+    }
+    &_promises {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 72px;
+        &_promis {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            width: fit-content;
+            &_image {
+                position: relative;
+                width: 60px;
+                height: 60px;
+                img {
+                    position: relative;
+                    width: 60px;
+                    height: 60px;
+                    z-index: 2;
+                    
+                }
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 70%;
+                    height: 70%;
+                    border-radius: 50%;
+                }
+                &::before {
+                    filter: blur(20px);
+                    background: rgba($color: #CCA881, $alpha: .9);
+                    z-index: 1;
+                }
+                &::after {
+                    filter: blur(50px);
+                    background: rgba($color: #CFAC85, $alpha: 0.5);
+                    z-index: 1;
+                }
+            }
+            p {
+                max-width: 258px;
+                span {
+                    @include font($fw: 600);
+                }
+            }
+        }
+    }
+    &_calc {
+        @include font($fz: 24px, $fw: 700);
+        margin-bottom: 64px;
+    }
+    &_btn {
+        @include btn($padding: 32px 54px, $border_radius: var(--big_radius));
+        @include font($fz: 24px, $fw: 600);
+    }
+}
