@@ -4,8 +4,8 @@
     --container-padding: 240px;
 
     // colors:
-    --white: #FFFFFF;
-    --black: #000000;
+    --white: #{$white};
+    --black: #{$black};
     --color_desert_sand: #E6CEAA;
     --white_brown: #C8A27B;
     --black_brown: #222222;

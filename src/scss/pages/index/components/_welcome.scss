@@ -1,14 +1,13 @@
 .welcome {
+    margin-bottom: 123px;
+    
     h2 {
         @include font($fz: 48px, $fw: 700);
         max-width: 890px;
         margin-bottom: 72px;
         span {
-            // @include font($fz: 48px, $fw: 700);
+            @include font($fz: 48px, $fw: 700);
             @include text_gradient(var(--main_gradient));
-            font-family: "Roboto", sans-serif;
-            font-weight: 900;
-            font-size: 48px;
         }
     }
     &_promises {

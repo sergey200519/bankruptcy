@@ -1,0 +1,44 @@
+.advantages {
+    &_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        max-width: 1294px;
+        margin: 0 auto;
+        background: linear-gradient(135deg, #32302E, #2A2A2A);
+        box-shadow: 
+            inset -5px -5px 20px rgba($color: $black, $alpha: .13),
+            inset 5px 5px 14px rgba($color: $white, $alpha: .09);
+        border-radius: 20px;
+        padding: 32px 53px;
+        &_item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 13px;
+            &:nth-child(1) {
+                max-width: 195px;
+            }
+            &:nth-child(2) {
+                max-width: 295px;
+            }
+            &:nth-child(3) {
+                max-width: 262px;
+            }
+            &:nth-child(4) {
+                max-width: 238px;
+            }
+            img {
+                width: 73px;
+                height: 73px;
+            }
+            p {
+                @include font($fz: 18px, $fw: 400, $pos: center);
+                span {
+                    @include font($fw: 700);
+                }
+            }
+        }
+    }
+}
